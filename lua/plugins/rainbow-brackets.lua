@@ -1,8 +1,8 @@
 return {
   "hiphish/rainbow-delimiters.nvim",
-  opts = function()
+  config = function()
     local rainbow_delimiters = require("rainbow-delimiters")
-    return {
+    require("rainbow-delimiters.setup").setup({
       strategy = {
         [""] = rainbow_delimiters.strategy["global"],
         commonlisp = rainbow_delimiters.strategy["local"],
@@ -25,6 +25,6 @@ return {
         "RainbowDelimiterCyan",
       },
       blacklist = { "c", "cpp" },
-    }
+    })
   end,
 }
