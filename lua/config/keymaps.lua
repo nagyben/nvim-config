@@ -6,3 +6,9 @@ vim.keymap.set({ "n", "v" }, "J", "'5j'", { expr = true, silent = true, remap = 
 vim.keymap.set({ "n", "v" }, "K", "'5k'", { expr = true, silent = true, remap = false })
 vim.keymap.set({ "n" }, "gh", vim.lsp.buf.hover, { silent = true, noremap = true })
 vim.keymap.set({ "n" }, "<leader>fG", "<cmd>Telescope live_grep<CR>", { desc = "Live grep file contents" })
+
+local lazyterm = function()
+  LazyVim.terminal(nil, { cwd = LazyVim.root() })
+end
+vim.keymap.set({ "!", "", "l" }, "<c-`>", lazyterm, { desc = "Terminal (Root Dir)" })
+vim.keymap.set("t", "<c-`>", "<cmd>close<cr>", { desc = "Close Terminal" })
