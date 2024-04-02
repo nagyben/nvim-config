@@ -6,3 +6,10 @@
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
   command = "silent! wa",
 })
+
+-- Automatically trim trailing whitespace on save
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  callback = function()
+    vim.cmd("silent! %s/\\s\\+$//e")
+  end,
+})
