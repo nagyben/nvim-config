@@ -3,3 +3,4 @@
 -- Add any additional options here
 vim.opt.winbar = "%=%m %f"
 vim.opt.expandtab = true
+vim.opt.conceallevel = 0
