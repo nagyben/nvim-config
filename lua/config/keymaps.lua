@@ -12,3 +12,4 @@ local lazyterm = function()
 end
 vim.keymap.set({ "!", "", "l" }, "<c-`>", lazyterm, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("t", "<c-`>", "<cmd>close<cr>", { desc = "Close Terminal" })
+vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>", { desc = "Open URL under cursor" })
