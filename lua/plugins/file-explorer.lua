@@ -13,6 +13,13 @@ return {
       end,
       desc = "Find Plugin File",
     },
+    {
+      "<leader>fh",
+      function()
+        require("telescope.builtin").find_files({ cwd = "~" })
+      end,
+      desc = "Find files in home dir",
+    },
   },
   config = function()
     require("telescope").load_extension("file_browser")
