@@ -1,11 +1,11 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
-    sync_root_with_cwd = true,
-    respect_buf_cwd = true,
-    update_focued_file = {
-      enable = true,
-      update_root = true,
+    window = {
+      mappings = {
+        ["P"] = { "toggle_preview", config = { use_float = false, use_image_nvim = true } },
+      },
+      position = "right",
     },
     filesystem = {
       filtered_items = {
@@ -19,6 +19,11 @@ return {
           -- 'thumbs.db',
         },
         never_show = {},
+      },
+      bind_to_cwd = true, -- true creates a 2-way binding between vim's cwd and neo-tree's root
+      cwd_target = {
+        sidebar = "tab", -- sidebar is when position = left or right
+        current = "window", -- current is when position = current
       },
     },
   },
