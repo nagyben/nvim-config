@@ -49,6 +49,7 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+        ["<CR>"] = cmp.config.disable,
       })
     end,
   },
