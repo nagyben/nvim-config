@@ -7,5 +7,8 @@ return {
     -- auto_refresh = false
   },
   event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-  keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv" } },
+  keys = {
+    { "<leader>cV", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv" },
+    { "<leader>cv", "<cmd>:VenvSelectCached<cr>", desc = "Select VirtualEnv (cached)" },
+  },
 }
