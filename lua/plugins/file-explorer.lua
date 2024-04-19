@@ -14,6 +14,13 @@ return {
       desc = "Find Plugin File",
     },
     {
+      "<leader>fL",
+      function()
+        require("telescope.builtin").live_grep({ cwd = "~/.local/share/nvim" })
+      end,
+      desc = "Find Plugin File",
+    },
+    {
       "<leader>fh",
       function()
         require("telescope.builtin").find_files({ cwd = "~" })
