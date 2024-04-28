@@ -6,6 +6,7 @@ vim.keymap.set({ "n", "v" }, "J", "'5j'", { expr = true, silent = true, remap = 
 vim.keymap.set({ "n", "v" }, "K", "'5k'", { expr = true, silent = true, remap = false })
 vim.keymap.set({ "n" }, "gh", vim.lsp.buf.hover, { silent = true, noremap = true })
 vim.keymap.set({ "n" }, "<leader>fG", "<cmd>Telescope live_grep<CR>", { desc = "Live grep file contents" })
+vim.keymap.set({ "n" }, "<leader>fl", "<cmd>Telescope live_grep<CR>", { desc = "Live grep file contents" })
 vim.keymap.set({ "n" }, "<leader><space>", "<cmd>Telescope file_browser<CR>", { desc = "Live file browser" })
 
 local lazyterm = function()
