@@ -6,5 +6,8 @@ return {
       -- disable a keymap
       keys[#keys + 1] = { "K", false }
     end,
+    opts = {
+      inlay_hints = { enabled = true },
+    },
   },
 }
