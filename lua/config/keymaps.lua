@@ -6,7 +6,11 @@ vim.keymap.set({ "n", "v" }, "J", "'5j'", { expr = true, silent = true, remap = 
 vim.keymap.set({ "n", "v" }, "K", "'5k'", { expr = true, silent = true, remap = false })
 vim.keymap.set({ "n" }, "gh", vim.lsp.buf.hover, { silent = true, noremap = true })
 vim.keymap.set({ "n" }, "<leader>fG", "<cmd>Telescope live_grep<CR>", { desc = "Live grep file contents" })
-vim.keymap.set({ "n" }, "<leader>gr", "<cmd>Telescope repo list<CR>", { desc = "Find git repo by name" })
+
+-- Note: we are using lolcate-rs to build the index for Telescope repo cached_list
+-- see https://github.com/ngirard/lolcate-rs
+vim.keymap.set({ "n" }, "<leader>gr", "<cmd>Telescope repo cached_list<CR>", { desc = "Find git repo by name" })
+
 vim.keymap.set({ "n" }, "<leader><space>", "<cmd>Telescope file_browser<CR>", { desc = "Live file browser" })
 
 local lazyterm = function()
