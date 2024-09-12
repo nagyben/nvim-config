@@ -29,3 +29,32 @@ vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>", { desc = "Open URL und
 -- prevent shift key escape characters in terminal mode
 vim.keymap.set("t", "<s-space>", "<space>", {})
 vim.keymap.set("t", "<s-enter>", "<enter>", {})
+
+local wk = require("which-key")
+-- As an example, we will create the following mappings:
+--  * <leader>ff find files
+--  * <leader>fr show recent files
+--  * <leader>fb Foobar
+-- we'll document:
+--  * <leader>fn new file
+--  * <leader>fe edit file
+-- and hide <leader>1
+
+wk.register({
+  g = {
+    name = "git",
+    h = {
+      name = "github",
+      o = { "<cmd>!gh repo view --web<cr>", "Open repo in browser" }, -- create a binding with label
+    },
+  },
+  O = {
+    name = "Octo",
+    p = {
+      name = "Pull requests",
+      l = { "<cmd>Octo pr list<CR>", "List pull requests in current repo" },
+      o = { "<cmd>Octo pr browser<CR>", "Open pull request in browser" },
+      C = { "<cmd>Octo pr checks<cr>", "Show checks status for PR" },
+    },
+  },
+}, { prefix = "<leader>" })
