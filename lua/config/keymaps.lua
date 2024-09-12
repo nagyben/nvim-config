@@ -5,7 +5,13 @@ vim.keymap.set({ "n", "v" }, "<leader>j", "'J'", { expr = true, silent = true, r
 vim.keymap.set({ "n", "v" }, "J", "'5j'", { expr = true, silent = true, remap = false })
 vim.keymap.set({ "n", "v" }, "K", "'5k'", { expr = true, silent = true, remap = false })
 vim.keymap.set({ "n" }, "gh", vim.lsp.buf.hover, { silent = true, noremap = true })
-vim.keymap.set({ "n" }, "<leader>fG", "<cmd>Telescope live_grep<CR>", { desc = "Live grep file contents" })
+-- vim.keymap.set({ "n" }, "<leader>fG", "<cmd>Telescope live_grep<CR>", { desc = "Live grep file contents" })
+vim.keymap.set(
+  { "n" },
+  "<leader>fG",
+  ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+  { desc = "Live grep file contents" }
+)
 
 -- Note: we are using lolcate-rs to build the index for Telescope repo cached_list
 -- see https://github.com/ngirard/lolcate-rs
