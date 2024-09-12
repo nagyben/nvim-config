@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  config = {
+  opts = {
     defaults = {
       vimgrep_arguments = {
         "rg",
@@ -11,12 +11,14 @@ return {
         "--column",
         "--smart-case",
         "--hidden",
+        "--glob",
+        "!{**/.git/*,**/node_modules/*,**/.venv/*,**/*.lock.hcl}",
       },
-      pickers = {
-        find_files = {
-          hidden = true,
-          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+    },
+    extensions = {
+      repo = {
+        settings = {
+          auto_lcd = true,
         },
       },
     },
