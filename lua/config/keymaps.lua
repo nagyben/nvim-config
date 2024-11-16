@@ -17,7 +17,9 @@ vim.keymap.set(
 -- see https://github.com/ngirard/lolcate-rs
 vim.keymap.set({ "n" }, "<leader>gr", "<cmd>Telescope repo cached_list<CR>", { desc = "Find git repo by name" })
 
-vim.keymap.set({ "n" }, "<leader><space>", "<cmd>Telescope file_browser<CR>", { desc = "Live file browser" })
+vim.keymap.set("n", "<leader><leader>", function()
+  require("telescope").extensions.smart_open.smart_open()
+end, { noremap = true, silent = true })
 
 local lazyterm = function()
   LazyVim.terminal(nil, { cwd = LazyVim.root() })
