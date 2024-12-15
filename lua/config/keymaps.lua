@@ -17,9 +17,9 @@ vim.keymap.set(
 -- see https://github.com/ngirard/lolcate-rs
 vim.keymap.set({ "n" }, "<leader>gr", "<cmd>Telescope repo cached_list<CR>", { desc = "Find git repo by name" })
 
-vim.keymap.set("n", "<leader><leader>", function()
-  require("telescope").extensions.smart_open.smart_open()
-end, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader><leader>", function()
+--   require("telescope").extensions.smart_open.smart_open()
+-- end, { noremap = true, silent = true })
 
 local lazyterm = function()
   LazyVim.terminal(nil, { cwd = LazyVim.root() })
@@ -33,36 +33,20 @@ vim.keymap.set("t", "<s-space>", "<space>", {})
 vim.keymap.set("t", "<s-enter>", "<enter>", {})
 
 local wk = require("which-key")
--- As an example, we will create the following mappings:
---  * <leader>ff find files
---  * <leader>fr show recent files
---  * <leader>fb Foobar
--- we'll document:
---  * <leader>fn new file
---  * <leader>fe edit file
--- and hide <leader>1
-
-wk.register({
-  g = {
-    name = "git",
-    h = {
-      name = "github",
-      o = { "<cmd>!gh repo view --web<cr>", "Open repo in browser" }, -- create a binding with label
-    },
-  },
-  O = {
-    name = "Octo",
-    p = {
-      name = "Pull requests",
-      l = { "<cmd>Octo pr list<CR>", "List pull requests in current repo" },
-      o = { "<cmd>Octo pr browser<CR>", "Open pull request in browser" },
-      C = { "<cmd>Octo pr checks<cr>", "Show checks status for PR" },
-    },
-  },
-}, { prefix = "<leader>" })
+wk.add({
+  { "<leader>O", group = "Octo" },
+  { "<leader>Op", group = "Pull requests" },
+  { "<leader>OpC", "<cmd>Octo pr checks<cr>", desc = "Show checks status for PR" },
+  { "<leader>Opl", "<cmd>Octo pr list<CR>", desc = "List pull requests in current repo" },
+  { "<leader>Opo", "<cmd>Octo pr browser<CR>", desc = "Open pull request in browser" },
+  { "<leader>g", group = "git" },
+  { "<leader>gh", group = "github" },
+  { "<leader>gho", "<cmd>!gh repo view --web<cr>", desc = "Open repo in browser" },
+})
 
 vim.filetype.add({
   extension = {
     avsc = "json",
   },
 })
+-- vim.keymap.set("i", "<c-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Signature help" })
