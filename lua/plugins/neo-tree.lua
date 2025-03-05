@@ -9,15 +9,15 @@ return {
     },
     filesystem = {
       filtered_items = {
-        visible = true,
+        -- visible = true,
         show_hidden_count = true,
-        hide_dotfiles = false,
-        hide_gitignored = false,
-        hide_by_name = {
-          -- '.git',
-          -- '.DS_Store',
-          -- 'thumbs.db',
-        },
+        -- hide_dotfiles = false,
+        -- hide_gitignored = false,
+        -- hide_by_name = {
+        --   '.git',
+        --   '.DS_Store',
+        --   'thumbs.db',
+        -- },
         never_show = {},
       },
       bind_to_cwd = true, -- true creates a 2-way binding between vim's cwd and neo-tree's root
