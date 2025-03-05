@@ -15,7 +15,7 @@ vim.keymap.set(
 
 -- Note: we are using lolcate-rs to build the index for Telescope repo cached_list
 -- see https://github.com/ngirard/lolcate-rs
-vim.keymap.set({ "n" }, "<leader>gr", "<cmd>Telescope repo cached_list<CR>", { desc = "Find git repo by name" })
+vim.keymap.set({ "n" }, "<leader>gr", "<cmd>SelectGitRepo<CR>", { desc = "Find git repo by name" })
 
 -- vim.keymap.set("n", "<leader><leader>", function()
 --   require("telescope").extensions.smart_open.smart_open()
