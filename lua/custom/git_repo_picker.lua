@@ -1,4 +1,4 @@
-local snacks = require('snacks.picker')
+local snacks = require("snacks.picker")
 
 -- Function to find git repositories using lolcate
 local function find_git_repos()
@@ -12,7 +12,7 @@ local function find_git_repos()
   local repos = {}
   for repo in result:gmatch("[^\r\n]+") do
     local cleaned_repo = repo:gsub("/%.git$", "")
-    table.insert(repos, {text = cleaned_repo})
+    table.insert(repos, { text = cleaned_repo })
   end
 
   return repos
@@ -28,10 +28,16 @@ local function select_git_repo()
       item.file = item.text
     end,
     sort = {
-      fields = { "repo:desc", "text" }
+      fields = { "score:desc", "#text" },
     },
+    confirm = function(picker, item)
+      if not item then
+        return
+      end
+      snacks.files({ dirs = { item.file } })
+    end,
   })
 end
 
 -- Command to trigger the plugin
-vim.api.nvim_create_user_command('SelectGitRepo', select_git_repo, {})
+vim.api.nvim_create_user_command("SelectGitRepo", select_git_repo, {})
