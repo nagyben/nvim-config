@@ -20,7 +20,7 @@ return {
     },
   },
   keys = {
-    { "<leader>CCC", "<cmd>:CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
-    { "<leader>CCA", "<cmd>:CodeCompanionActions<cr>", desc = "CodeCompanion Chat" },
+    { "<leader>cc", "<cmd>:CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
+    { "<leader>ci", "<cmd>:CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "CodeCompanion Chat" },
   },
 }
