@@ -17,9 +17,10 @@ vim.keymap.set(
 -- see https://github.com/ngirard/lolcate-rs
 vim.keymap.set({ "n" }, "<leader>gr", "<cmd>SelectGitRepo<CR>", { desc = "Find git repo by name" })
 
--- vim.keymap.set("n", "<leader><leader>", function()
---   require("telescope").extensions.smart_open.smart_open()
--- end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>uv", function()
+  local new_config = not vim.diagnostic.config().virtual_lines
+  vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = "Toggle diagnostic virtual_lines" })
 
 local lazyterm = function()
   LazyVim.terminal(nil, { cwd = LazyVim.root() })
