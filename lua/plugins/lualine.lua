@@ -1,5 +1,7 @@
-return {}
---   {
+return {
+  { "nvim-lualine/lualine.nvim", enabled = false },
+}
+--   return {
 --     "nvim-lualine/lualine.nvim",
 --     event = "VeryLazy",
 --     init = function()
