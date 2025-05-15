@@ -7,5 +7,9 @@ return {
     -- see the "default configuration" section below for full documentation on how to define
     -- your own keymap.
     keymap = { preset = "super-tab" },
+    cmdline = { sources = { "cmdline" } },
+    sources = {
+      default = { "lsp", "path", "buffer", "codecompanion" },
+    },
   },
 }
