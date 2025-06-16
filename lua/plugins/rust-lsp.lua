@@ -4,6 +4,7 @@ return {
     server = {
       default_settings = {
         ["rust-analyzer"] = {
+          linkedProjects = {},
           diagnostics = {
             disabled = { "proc-macro-disabled" },
           },
