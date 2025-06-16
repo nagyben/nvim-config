@@ -30,6 +30,14 @@ vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>", { desc = "Open URL und
 vim.keymap.set("t", "<s-space>", "<space>", {})
 vim.keymap.set("t", "<s-enter>", "<enter>", {})
 
+-- for these to work you have to set the keymap in the iTerm key bindings
+-- these are the up/down/left/right arrow emojis
+-- see https://unicode.party/
+vim.keymap.set("n", "⬆️", "<cmd>Treewalker Up<CR>", { desc = "Treewalker Up", noremap = true })
+vim.keymap.set("n", "⬇️", "<cmd>Treewalker Down<CR>", { desc = "Treewalker Down", noremap = true })
+vim.keymap.set("n", "➡️", "<cmd>Treewalker Right<CR>", { desc = "Treewalker Right", noremap = true })
+vim.keymap.set("n", "⬅️", "<cmd>Treewalker Left<CR>", { desc = "Treewalker Left", noremap = true })
+
 local wk = require("which-key")
 wk.add({
   { "<leader>O", group = "Octo" },
