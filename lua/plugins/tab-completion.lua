@@ -6,7 +6,9 @@ return {
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- see the "default configuration" section below for full documentation on how to define
     -- your own keymap.
-    keymap = { preset = "super-tab" },
+    --
+    -- leave commented until https://github.com/LazyVim/LazyVim/pull/6183 is merged
+    -- keymap = { preset = "super-tab" },
     cmdline = { sources = { "cmdline" } },
     sources = {
       default = { "lsp", "path", "buffer", "codecompanion" },
