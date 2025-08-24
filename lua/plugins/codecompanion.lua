@@ -1,21 +1,15 @@
 return {
-  "olimorris/codecompanion.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-    -- "hrsh7th/nvim-cmp", -- Optional: For using slash commands and variables in the chat buffer
-    "ravitemer/codecompanion-history.nvim",
-    { "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
-  },
-  config = true,
-  opts = {
-    adapters = {
-      openai = function()
-        return require("codecompanion.adapters").extend("openai", {
-          env = {
-            api_key = "insert your key here",
-  opts = function()
-    return {
+  {
+    "olimorris/codecompanion.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      -- "hrsh7th/nvim-cmp", -- Optional: For using slash commands and variables in the chat buffer
+      "ravitemer/codecompanion-history.nvim",
+      { "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
+    },
+    opts = {
       extensions = {
         history = {
           enabled = true,
@@ -72,10 +66,10 @@ return {
           },
         },
       },
-    }
-  end,
-  keys = {
-    { "<leader>cc", "<cmd>:CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
-    { "<leader>ci", "<cmd>:CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "CodeCompanion Chat" },
+    },
+    keys = {
+      { "<leader>cc", "<cmd>:CodeCompanionChat<cr>", desc = "CodeCompanion Chat" },
+      { "<leader>ci", "<cmd>:CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "CodeCompanion Chat" },
+    },
   },
 }
