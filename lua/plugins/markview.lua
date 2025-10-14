@@ -5,11 +5,40 @@ return {
   },
   {
     "OXY2DEV/markview.nvim",
-    lazy = false,
+    ft = { "markdown", "codecompanion" },
+    opts = {
+      preview = {
+        filetypes = {
+          "md",
+          "markdown",
+          "norg",
+          "rmd",
+          "org",
+          "vimwiki",
+          "typst",
+          "latex",
+          "quarto",
+          "Avante",
+          "codecompanion",
+        },
+        ignore_buftypes = {},
 
-    source = true,
-    dependencies = {
-      "saghen/blink.cmp",
+        condition = function(buffer)
+          local ft, bt = vim.bo[buffer].ft, vim.bo[buffer].bt
+
+          if bt == "nofile" and ft == "codecompanion" then
+            return true
+          elseif bt == "nofile" then
+            return false
+          else
+            return true
+          end
+        end,
+      },
+      source = true,
+      dependencies = {
+        "saghen/blink.cmp",
+      },
     },
   },
 }
