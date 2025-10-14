@@ -10,6 +10,11 @@ return {
       { "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
     },
     opts = {
+      display = {
+        action_palette = {
+          provider = "snacks",
+        },
+      },
       extensions = {
         history = {
           enabled = true,
@@ -23,7 +28,7 @@ return {
             -- Number of days after which chats are automatically deleted (0 to disable)
             expiration_days = 0,
             -- Picker interface (auto resolved to a valid picker)
-            picker = "telescope", --- ("telescope", "snacks", "fzf-lua", or "default")
+            picker = "default", --- ("telescope", "snacks", "fzf-lua", or "default")
             ---Automatically generate titles for new chats
             auto_generate_title = true,
             title_generation_opts = {
