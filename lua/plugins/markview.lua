@@ -29,7 +29,7 @@ return {
           if bt == "nofile" and ft == "codecompanion" then
             return true
           elseif bt == "nofile" then
-            return false
+            return true
           else
             return true
           end
