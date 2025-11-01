@@ -12,7 +12,7 @@ vim.keymap.set({ "n" }, "<c-/>", "gcc", { desc = "Toggle comment", silent = true
 -- Note: we are using lolcate-rs to build the index for Telescope repo cached_list
 -- see https://github.com/ngirard/lolcate-rs
 vim.keymap.set({ "n" }, "<leader>gr", "<cmd>SelectGitRepo<CR>", { desc = "Find git repo by name" })
-vim.keymap.set({ "n" }, "<leader>gp", "<cmd>SelectGithubPullRequest<CR>", { desc = "Open pull request" })
+-- vim.keymap.set({ "n" }, "<leader>gp", "<cmd>SelectGithubPullRequest<CR>", { desc = "Open pull request" })
 
 vim.keymap.set("n", "<leader>uv", function()
   local new_config = not vim.diagnostic.config().virtual_lines
