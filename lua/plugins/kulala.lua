@@ -9,5 +9,7 @@ return {
   opts = {
     -- your configuration comes here
     global_keymaps = true,
+    kulala_keymaps = false,
+    kulala_keymaps_prefix = "<leader>R",
   },
 }
