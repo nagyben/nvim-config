@@ -35,6 +35,7 @@ return {
           end
         end,
       },
+      yaml = { enable = false },
       source = true,
       dependencies = {
         "saghen/blink.cmp",
