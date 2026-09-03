@@ -13,6 +13,12 @@ vim.keymap.set({ "n" }, "<c-/>", "gcc", { desc = "Toggle comment", silent = true
 -- see https://github.com/ngirard/lolcate-rs
 vim.keymap.set({ "n" }, "<leader>gr", "<cmd>SelectGitRepo<CR>", { desc = "Find git repo by name" })
 -- vim.keymap.set({ "n" }, "<leader>gp", "<cmd>SelectGithubPullRequest<CR>", { desc = "Open pull request" })
+vim.keymap.set(
+  { "v" },
+  "<leader>gby",
+  "<cmd>'<,'>GitBlameCopyFileURL<CR>",
+  { desc = "Link to code selection in github" }
+)
 
 vim.keymap.set("n", "<leader>uv", function()
   local new_config = not vim.diagnostic.config().virtual_lines
