@@ -16,6 +16,7 @@ return {
       "nvim-lua/plenary.nvim",
       "folke/snacks.nvim",
       "nvim-tree/nvim-web-devicons",
+      "sindrets/diffview.nvim",
     },
     opts = {
       picker = "snacks",
